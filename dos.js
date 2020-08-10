@@ -7,5 +7,18 @@ b)la marca del más caro de los líquidos
 c)la marca del más barato de los sólidos
 */function mostrar()
 {
-  alert("dos");
+  
+do{
+
+
+
+
+
+ rta=prompt("desea seguir ingresando articulos?")
+}
+while=(rta=="si")
+
+
+
+
 }
