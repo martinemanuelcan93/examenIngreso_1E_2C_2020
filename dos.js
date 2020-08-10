@@ -5,7 +5,8 @@ marca, precio, peso en kilogramos, tipo(sólido o líquido)
 a)informar el peso total de la compra.
 b)la marca del más caro de los líquidos
 c)la marca del más barato de los sólidos
-*/function mostrar() {
+*/
+function mostrar() {
   let productos;
   let marca;
   let precio;
@@ -18,17 +19,15 @@ c)la marca del más barato de los sólidos
   let flag1 = 0;
   let precioliquidocaro;
   let preciosolidocaro;
-  let rta;
-
-  rta=prompt(" quiere ingresar productos?")
+  let rta; 
   do {
-    productos = prompt("Ingresar productos")
+    productos = prompt("Ingresar productos");
     
     marca = prompt("Ingresa una marca")
-    while (!(isNaN(marca)){
+    while (!(isNaN(marca))){
       marca = prompt("Dato invalido. ingresa una marca")
     }
-    precio = parseInt(prompt("Ingrese un preecio"));
+    precio = parseInt(prompt("Ingrese un preecio"))
     while (precio > 0 || precio < 3000 || isNaN(precio)) {
       precio = prompt("Dato o numero invalido. Ingrese precio")
     }
@@ -36,33 +35,35 @@ c)la marca del más barato de los sólidos
     while (isNaN(pesokg) || pesokg > 100 || peso < 0) {
       pesokg = parseInt(prompt("Dato invalido. Por favor Ingrese el peso  "))
     }
-    tipo = prompt("tipo liquido o solido")
+    tipo = prompt("tipo liquido o solido");
     while (tipo == "Liquido" || tipo == "Solido") {
       tipo = prompt("Recuerda que solo debes ingresar el tipo:  o liquido o solido")
-
     }
 
     if (flag == 0 || tipo == "liquido" && precio > precioliquidocaro) {
 
       precioliquidocaro = precio;
       marcaliquidocaro = marca;
+      flag=1
 
     }
-    if (flago == 0 || tipo == "solido" && preciosolidocaro > precio) {
+    if (flag1 == 0 || tipo == "solido" && preciosolidocaro > precio) {
       marcasolidobarato = marca;
-      preciosolidocaro = precio
+      preciosolidocaro = precio;
+      flag1=1;
 
     }
 
+    rta = prompt("desea seguir ingresando articulos?") 
+  
+     }
 
-
-
-    rta = prompt("desea seguir ingresando articulos?")
-  }
-}
 while(rta == "si");
 
 pesototal = peso + pesototal
-document.writeln("") marcaliquidocaro
-document.writeln("marcasolidobarato")
-}
+
+document.writeln("El peso total de la compra: "+pesototal+"<br>") 
+document.writeln("La marca del liquido mas caro es :"+marcaliquidocaro+"<br>")
+document.writeln("La marca del solido mas barato es :"+marcasolidobarato+"<br>")
+
+    }
